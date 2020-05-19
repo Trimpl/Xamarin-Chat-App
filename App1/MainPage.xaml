@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="App1.MainPage">
+
+    <StackLayout>
+        <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}"
+                           HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+        <StackLayout VerticalOptions="StartAndExpand">
+            <Label x:Name="UsernameLabel" Text="Username" />
+            <Entry x:Name="usernameEntry" Placeholder="username" />
+            <Label x:Name="PasswordLabel" Text="Password" />
+            <Entry x:Name="passwordEntry" IsPassword="true" />
+            <Button x:Name="buttonLogin" Text="Login" Clicked="OnLoginButtonClicked" />
+            <Button x:Name="buttonLogout" Text="Logout" Clicked="OnLogoutButtonClicked" />
+            <!--<Button Text="Check" Clicked="CheckButtonClicked"/>-->
+        </StackLayout>
+        <StackLayout>
+            <Label x:Name="ListLabel" Text="Кому пишем" HorizontalOptions="Center" FontSize="Large" />
+            <ListView x:Name="listView" ItemTapped="ChatToUser"/>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>
